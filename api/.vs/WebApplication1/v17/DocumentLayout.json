@@ -1,33 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\",
+  "WorkspaceRootPath": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\source\\repos\\webapplication1\\api\\webapplication1\\services\\openaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\services\\openaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\source\\repos\\webapplication1\\api\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\source\\repos\\webapplication1\\api\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\source\\repos\\webapplication1\\api\\webapplication1\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\source\\repos\\webapplication1\\api\\webapplication1\\controllers\\openaicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\onedrive\\belgeler\\github\\webapplication1\\api\\webapplication1\\controllers\\openaicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\openaicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\source\\repos\\webapplication1\\api\\webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\onedrive\\belgeler\\github\\webapplication1\\api\\webapplication1\\services\\openaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\services\\openaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\onedrive\\belgeler\\github\\webapplication1\\api\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\onedrive\\belgeler\\github\\webapplication1\\api\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\onedrive\\belgeler\\github\\webapplication1\\api\\webapplication1\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\onedrive\\belgeler\\github\\webapplication1\\api\\webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\source\\repos\\webapplication1\\api\\webapplication1\\controllers\\notescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|c:\\users\\holly\\onedrive\\belgeler\\github\\webapplication1\\api\\webapplication1\\controllers\\notescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BE0FC31-8D60-4EA2-B5F3-263658E73931}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\notescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -38,15 +38,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "OpenAIController.cs",
-              "DocumentMoniker": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Controllers\\OpenAIController.cs",
+              "DocumentMoniker": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Controllers\\OpenAIController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\OpenAIController.cs",
-              "ToolTip": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Controllers\\OpenAIController.cs",
+              "ToolTip": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Controllers\\OpenAIController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\OpenAIController.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAADwvxYAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -55,11 +55,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "OpenAIService.cs",
-              "DocumentMoniker": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Services\\OpenAIService.cs",
+              "DocumentMoniker": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Services\\OpenAIService.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Services\\OpenAIService.cs",
-              "ToolTip": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Services\\OpenAIService.cs",
+              "ToolTip": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Services\\OpenAIService.cs",
               "RelativeToolTip": "WebApplication1\\Services\\OpenAIService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -68,50 +68,47 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\appsettings.json",
               "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
-              "ToolTip": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\appsettings.json",
+              "ToolTip": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\appsettings.json",
               "RelativeToolTip": "WebApplication1\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-08T10:45:26.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T10:45:26.849Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Program.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
-              "ToolTip": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Program.cs",
+              "ToolTip": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Program.cs",
               "RelativeToolTip": "WebApplication1\\Program.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAABUAAABnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T10:28:12.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-06T10:28:12.407Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ChatController.cs",
-              "DocumentMoniker": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Controllers\\ChatController.cs",
+              "DocumentMoniker": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ChatController.cs",
-              "ToolTip": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Controllers\\ChatController.cs",
+              "ToolTip": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Controllers\\ChatController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\ChatController.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAADwvxcAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T10:56:27.179Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T10:56:27.179Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Controllers\\WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Controllers\\WeatherForecastController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\WeatherForecastController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -121,9 +118,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "NotesController.cs",
-              "DocumentMoniker": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Controllers\\NotesController.cs",
+              "DocumentMoniker": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Controllers\\NotesController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\NotesController.cs",
-              "ToolTip": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\Controllers\\NotesController.cs",
+              "ToolTip": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Controllers\\NotesController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\NotesController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
