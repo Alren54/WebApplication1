@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj": {}
+    "C:\\Users\\user173\\Documents\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj": {
+    "C:\\Users\\user173\\Documents\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\user173\\Documents\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj",
-        "packagesPath": "C:\\Users\\holly\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\obj\\",
+        "projectPath": "C:\\Users\\user173\\Documents\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj",
+        "packagesPath": "C:\\Users\\user173\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user173\\Documents\\GitHub\\WebApplication1\\api\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\holly\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user173\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
