@@ -30,8 +30,15 @@ public class OpenAIService
             {
                 var requestContent = new
                 {
-                    prompt = prompt,
-                    max_tokens = 150
+                    messages = new object[]
+                    {
+                        new { role = "system", content = "You are an AI assistant that helps people find information." },
+                        new { role = "user", content = prompt }
+                    },
+                    temperature = 0.7,
+                    top_p = 0.95,
+                    max_tokens = 150,
+                    stream = false
                 };
 
                 var jsonRequest = JsonConvert.SerializeObject(requestContent);
@@ -43,11 +50,7 @@ public class OpenAIService
                 {
                     var jsonResponse = await response.Content.ReadAsStringAsync();
                     dynamic responseData = JsonConvert.DeserializeObject(jsonResponse);
-                    string chatResponse = responseData.choices[0].text.ToString();
-
-                    // Log successful response
-                    Console.WriteLine($"Successful response from OpenAI: {jsonResponse}");
-
+                    string chatResponse = responseData.choices[0].message.content.ToString();
                     return chatResponse;
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.TooManyRequests)
@@ -59,19 +62,13 @@ public class OpenAIService
                 else
                 {
                     var errorMessage = await response.Content.ReadAsStringAsync();
-
-                    // Log error response
-                    Console.WriteLine($"OpenAI request failed with status code {response.StatusCode}. Error: {errorMessage}");
-
                     throw new HttpRequestException($"OpenAI request failed with status code {response.StatusCode}. Error: {errorMessage}");
                 }
             }
             catch (Exception ex)
             {
-                // Log exception details
                 Console.WriteLine($"An error occurred while processing OpenAI response: {ex.Message}");
-
-                throw; // Re-throw the exception to propagate it up
+                throw;
             }
         }
 

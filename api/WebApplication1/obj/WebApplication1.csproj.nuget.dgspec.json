@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj": {}
+    "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj": {
+    "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\holly\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\holly\\source\\repos\\WebApplication1\\api\\WebApplication1\\obj\\",
+        "outputPath": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\holly\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -4,6 +4,7 @@ export default function TeachBot() {
   const [input, setInput] = useState('');
   const [response, setResponse] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
@@ -12,6 +13,7 @@ export default function TeachBot() {
   const handleSubmit = async () => {
     setError(''); // Clear previous error
     setResponse(''); // Clear previous response
+    setLoading(true); // Set loading state
 
     try {
       const res = await fetch('http://localhost:5221/api/OpenAI/GenerateText', {
@@ -31,6 +33,8 @@ export default function TeachBot() {
       setResponse(data.response);
     } catch (error) {
       setError('Error fetching data: ' + error.message);
+    } finally {
+      setLoading(false); // Reset loading state
     }
   };
 
@@ -43,14 +47,16 @@ export default function TeachBot() {
         onChange={handleInputChange}
         placeholder="Ask me something..."
       />
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit} disabled={loading}>
+        {loading ? 'Loading...' : 'Submit'}
+      </button>
       {response && (
         <div>
           <h2>Response:</h2>
           <p>{response}</p>
         </div>
       )}
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 }
