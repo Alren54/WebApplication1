@@ -50,8 +50,7 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\OpenAIController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T12:09:17.277Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T12:09:17.277Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "WebApplication1\\Services\\OpenAIService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T10:48:26.689Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T10:48:26.689Z"
             },
             {
               "$type": "Document",
@@ -76,8 +74,7 @@
               "RelativeToolTip": "WebApplication1\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-08T10:45:26.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T10:45:26.849Z"
             },
             {
               "$type": "Document",
@@ -89,8 +86,7 @@
               "RelativeToolTip": "WebApplication1\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T10:28:12.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-06T10:28:12.407Z"
             },
             {
               "$type": "Document",
@@ -102,8 +98,7 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\ChatController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T10:56:27.179Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-08T10:56:27.179Z"
             },
             {
               "$type": "Document",
@@ -113,7 +108,7 @@
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\WeatherForecastController.cs",
               "ToolTip": "C:\\Users\\holly\\OneDrive\\Belgeler\\GitHub\\WebApplication1\\api\\WebApplication1\\Controllers\\WeatherForecastController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwAsAAAAKAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwBAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-07T09:34:23.559Z",
               "EditorCaption": ""
@@ -128,8 +123,7 @@
               "RelativeToolTip": "WebApplication1\\Controllers\\NotesController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-07T09:34:20.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-07T09:34:20.914Z"
             }
           ]
         }
