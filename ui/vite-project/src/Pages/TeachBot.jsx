@@ -1,19 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
-export default function TeachBot() {
-  const [input, setInput] = useState('');
+export default function TeachBot(notes) {
+  console.log(notes.description)
+  const [message, setMessage] = useState('');
+  const [conversations, setConversations] = useState([]);
+  const [activeConversation, setActiveConversation] = useState(null);
   const [response, setResponse] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
+  const handleMessageSubmit = async (e) => {
+    e.preventDefault();
+    if (message.trim() !== '' && activeConversation !== null) {
+      const newMessage = { text: message, sender: 'main' };
+      const updatedConversations = conversations.map((conv, index) => {
+        if (index === activeConversation) {
+          return {
+            ...conv,
+            messages: [...conv.messages, newMessage]
+          };
+        }
+        return conv;
+      });
+      setConversations(updatedConversations);
+      setMessage('');
+
+      // API'ye mesajı gönder
+      await sendToAPI(message);
+    }
   };
 
-  const handleSubmit = async () => {
-    setError(''); // Clear previous error
-    setResponse(''); // Clear previous response
-    setLoading(true); // Set loading state
+  const sendToAPI = async (inputMessage) => {
+    setError(''); // Önceki hataları temizle
+    setResponse(''); // Önceki cevapları temizle
+    setLoading(true); // Yükleme durumunu ayarla
 
     try {
       const res = await fetch('http://localhost:5221/api/OpenAI/GenerateText', {
@@ -21,42 +41,172 @@ export default function TeachBot() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ prompt: input })
+        body: JSON.stringify({ prompt: inputMessage })
       });
 
       if (!res.ok) {
         const errorText = await res.text();
-        throw new Error(errorText || 'Something went wrong');
+        throw new Error(errorText || 'Bir şeyler yanlış gitti');
       }
 
       const data = await res.json();
-      setResponse(data.response);
+      setResponse(data.response); // API'den gelen cevabı ayarla
     } catch (error) {
-      setError('Error fetching data: ' + error.message);
+      setError('Veri alınırken hata oluştu: ' + error.message);
     } finally {
-      setLoading(false); // Reset loading state
+      setLoading(false); // Yükleme durumunu sıfırla
     }
   };
 
+  const handleNewConversation = () => {
+    const newConversation = { id: conversations.length, messages: [] };
+    setConversations([...conversations, newConversation]);
+    setActiveConversation(conversations.length);
+  };
+
+  const handleDeleteConversation = (id) => {
+    const updatedConversations = conversations.filter(conv => conv.id !== id).map((conv, index) => ({
+      ...conv,
+      id: index
+    }));
+    setConversations(updatedConversations);
+
+    if (updatedConversations.length === 0) {
+      setActiveConversation(null);
+    } else if (activeConversation === id) {
+      setActiveConversation(0);
+    } else {
+      setActiveConversation(updatedConversations.findIndex(conv => conv.id === activeConversation));
+    }
+  };
+
+  const handleInputChange = (e) => {
+    setMessage(e.target.value);
+  };
+
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [conversations, response]);
+
   return (
-    <div>
-      <h1>TeachBot</h1>
-      <input
-        type="text"
-        value={input}
-        onChange={handleInputChange}
-        placeholder="Ask me something..."
-      />
-      <button onClick={handleSubmit} disabled={loading}>
-        {loading ? 'Loading...' : 'Submit'}
-      </button>
-      {response && (
-        <div>
-          <h2>Response:</h2>
-          <p>{response}</p>
+    <div style={{ top: "70px" }} className="container-fluid">
+      <div className="row">
+        <div className="col-md-3" style={{ backgroundColor: "#ABE0F7", position: "fixed", height: "calc(95vh - 70px)", overflowY: "scroll" }}>
+          <h3 style={{ textAlign: "center", backgroundColor: "White", borderRadius: '15px', marginTop: "10px" }}>Finansal Okur-Yazarlık Danışmanı </h3>
+          <hr />
+          <button className="btn btn-primary" onClick={handleNewConversation} style={{ backgroundColor: "#000581", color: "white" }}>Yeni Konuşma</button>
+          <div>
+            {conversations.map((conv) => (
+              <div
+                onClick={() => setActiveConversation(conv.id)}
+                key={conv.id}
+                style={{
+                  cursor: 'pointer',
+                  marginTop: '10px',
+                  padding: '10px',
+                  backgroundColor: activeConversation === conv.id ? '#7334FF' : 'white',
+                  color: activeConversation === conv.id ? 'white' : 'black',
+                  borderRadius: '10px',
+                  position: 'relative'
+                }}
+              >
+                <span style={{ width: "80%" }}>Konuşma {conv.id + 1} </span>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleDeleteConversation(conv.id);
+                  }}
+                  style={{ width: "20%", position: 'absolute', right: '10px', top: '5px', backgroundColor: activeConversation === conv.id ? 'white' : 'red', color: activeConversation === conv.id ? 'black' : 'white' }}
+                  className="btn btn-danger btn-sm"
+                >
+                  Sil
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="container" style={{ backgroundColor: "#E6F5FB", padding: "0 230px 0 270px" }}>
+          <div className="col-md-9 offset-md-3" style={{ backgroundColor: "white", height: "calc(95vh - 70px)", borderLeft: "2px solid #C6EEFF", borderRight: "2px solid #C6EEFF", display: "flex", flexDirection: "column" }}>
+            <h3 style={{ textAlign: "center", backgroundColor: "white", borderRadius: '15px', marginTop: "0px" }}>TeachBot - Konuşma {activeConversation !== null ? activeConversation + 1 : 'Yok'}</h3>
+           
+            <hr />
+            
+            <div style={{ flex: 1, overflowY: "auto" }}>
+      {activeConversation !== null && conversations[activeConversation] && (
+        <div style={{ width: "100%" }} className="container">
+          {conversations[activeConversation].messages.map((msg, index) => (
+            <div
+              key={index}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                marginBottom: "10px",
+                justifyContent: 'flex-end' 
+              }}
+            >
+              <p
+                style={{
+                  padding: "10px",
+                  borderRadius: '10px',
+                  backgroundColor: msg.sender === 'main' ? "#C6EEFF" : "#ABE0F7",
+                  maxWidth: "70%",
+                  boxShadow: "0px 4px 8px rgba(0, 5, 129, 0.6)"
+                }}
+                className="card"
+              >
+                {msg.text}
+              </p>
+            </div>
+          ))}
+          <div ref={messagesEndRef} />
         </div>
       )}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+
+      {loading && <p>Loading...</p>}
+      {response && (
+        <div style={{ padding: "10px", backgroundColor: "white", display: "flex", alignItems: "center", marginBottom: "10px" }}>
+          <p style={{
+            padding: "10px",
+            borderRadius: '10px',
+            backgroundColor: "#C6EEFF",
+            maxWidth: "70%",
+            boxShadow: "0px 4px 8px rgba(0, 5, 129, 0.6)"
+          }}>{response}</p>
+        </div>
+      )}
+    </div>
+            {error && <p style={{ color: 'red' }}>Hata: {error}</p>}
+            <div style={{ padding: "10px", backgroundColor: "white" }}>
+              <form onSubmit={handleMessageSubmit} className="">
+                <div className="input-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Mesajınızı yazın..."
+                    value={message}
+                    onChange={handleInputChange}
+                    style={{ backgroundColor: "Whitesmoke", color: "", borderRadius: '80px' }}
+                    disabled={activeConversation === null}
+                  />
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    style={{ backgroundColor: "#000581", color: "white", borderRadius: '80px' }}
+                    disabled={activeConversation === null}
+                  >
+                    Gönder
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

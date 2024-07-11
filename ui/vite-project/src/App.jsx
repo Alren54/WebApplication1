@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './Components/NAVbarr';
 import SiteRoutes from './Components/SiteRotute';
 import { getNotes } from './services/apiService';
+import FooTeR from './Components/Footer';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -19,14 +20,18 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <SiteRoutes />
-        <h2>Notes</h2>
-        <ul>
+      <br />
+     <br />
+     <br />
+      <div >
+        <SiteRoutes notes={notes} />
+        
+        {/* <ul>
           {notes.map((note) => (
             <li key={note.id}>{note.description}</li>
           ))}
-        </ul>
+        </ul> */}
+        <FooTeR/>
       </div>
     </>
   );
