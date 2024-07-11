@@ -8,14 +8,7 @@ namespace WebApplication1.Controllers
     public class WebApplication1Controller : ControllerBase
     {
         // Mock data for demonstration purposes
-        private static List<Note> notes = new List<Note>
-        {
-            new Note { Id = 1, Description = "First note" },
-            new Note { Id = 2, Description = "Second note" },
-            new Note { Id = 3, Description = "Third note" },
-            new Note { Id = 4, Description = "Fourth note" },
-            new Note { Id = 5, Description = "Fifth note" }  // Ensure this entry is included
-        };
+        private static List<Note> notes = new List<Note>();
 
         [HttpGet("GetNotes")]
         public IActionResult GetNotes()
