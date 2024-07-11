@@ -1,11 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 
-export default function TeachBot(notes) {
-  console.log(notes.description)
+export default function TeachBot() {
   const [message, setMessage] = useState('');
   const [conversations, setConversations] = useState([]);
   const [activeConversation, setActiveConversation] = useState(null);
-  const [response, setResponse] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -26,14 +24,13 @@ export default function TeachBot(notes) {
       setMessage('');
 
       // API'ye mesajı gönder
-      await sendToAPI(message);
+      await sendToAPI(message, activeConversation);
     }
   };
 
-  const sendToAPI = async (inputMessage) => {
-    setError(''); // Önceki hataları temizle
-    setResponse(''); // Önceki cevapları temizle
-    setLoading(true); // Yükleme durumunu ayarla
+  const sendToAPI = async (inputMessage, convIndex) => {
+    setError('');
+    setLoading(true);
 
     try {
       const res = await fetch('http://localhost:5221/api/OpenAI/GenerateText', {
@@ -50,11 +47,20 @@ export default function TeachBot(notes) {
       }
 
       const data = await res.json();
-      setResponse(data.response); // API'den gelen cevabı ayarla
+      const updatedConversations = conversations.map((conv, index) => {
+        if (index === convIndex) {
+          return {
+            ...conv,
+            messages: [...conv.messages,{text:message,sender:'main'}, { text: data.response, sender: 'bot' }]
+          };
+        }
+        return conv;
+      });
+      setConversations(updatedConversations);
     } catch (error) {
       setError('Veri alınırken hata oluştu: ' + error.message);
     } finally {
-      setLoading(false); // Yükleme durumunu sıfırla
+      setLoading(false);
     }
   };
 
@@ -90,7 +96,7 @@ export default function TeachBot(notes) {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [conversations, response]);
+  }, [conversations, activeConversation]);
 
   return (
     <div style={{ top: "70px" }} className="container-fluid">
@@ -133,53 +139,39 @@ export default function TeachBot(notes) {
         <div className="container" style={{ backgroundColor: "#E6F5FB", padding: "0 230px 0 270px" }}>
           <div className="col-md-9 offset-md-3" style={{ backgroundColor: "white", height: "calc(95vh - 70px)", borderLeft: "2px solid #C6EEFF", borderRight: "2px solid #C6EEFF", display: "flex", flexDirection: "column" }}>
             <h3 style={{ textAlign: "center", backgroundColor: "white", borderRadius: '15px', marginTop: "0px" }}>TeachBot - Konuşma {activeConversation !== null ? activeConversation + 1 : 'Yok'}</h3>
-           
             <hr />
-            
             <div style={{ flex: 1, overflowY: "auto" }}>
-      {activeConversation !== null && conversations[activeConversation] && (
-        <div style={{ width: "100%" }} className="container">
-          {conversations[activeConversation].messages.map((msg, index) => (
-            <div
-              key={index}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "10px",
-                justifyContent: 'flex-end' 
-              }}
-            >
-              <p
-                style={{
-                  padding: "10px",
-                  borderRadius: '10px',
-                  backgroundColor: msg.sender === 'main' ? "#C6EEFF" : "#ABE0F7",
-                  maxWidth: "70%",
-                  boxShadow: "0px 4px 8px rgba(0, 5, 129, 0.6)"
-                }}
-                className="card"
-              >
-                {msg.text}
-              </p>
+              {activeConversation !== null && conversations[activeConversation] && (
+                <div style={{ width: "100%" }} className="container">
+                  {conversations[activeConversation].messages.map((msg, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        marginBottom: "10px",
+                        justifyContent: msg.sender === 'main' ? 'flex-end' : 'flex-start'
+                      }}
+                    >
+                      <p
+                        style={{
+                          padding: "10px",
+                          borderRadius: '10px',
+                          backgroundColor: msg.sender === 'main' ? "#C6EEFF" : "#ABE0F7",
+                          maxWidth: "70%",
+                          boxShadow: "0px 4px 8px rgba(0, 5, 129, 0.6)"
+                        }}
+                        className="card"
+                      >
+                        {msg.text}
+                      </p>
+                    </div>
+                  ))}
+                  <div ref={messagesEndRef} />
+                </div>
+              )}
+              {loading && <p>Loading...</p>}
             </div>
-          ))}
-          <div ref={messagesEndRef} />
-        </div>
-      )}
-
-      {loading && <p>Loading...</p>}
-      {response && (
-        <div style={{ padding: "10px", backgroundColor: "white", display: "flex", alignItems: "center", marginBottom: "10px" }}>
-          <p style={{
-            padding: "10px",
-            borderRadius: '10px',
-            backgroundColor: "#C6EEFF",
-            maxWidth: "70%",
-            boxShadow: "0px 4px 8px rgba(0, 5, 129, 0.6)"
-          }}>{response}</p>
-        </div>
-      )}
-    </div>
             {error && <p style={{ color: 'red' }}>Hata: {error}</p>}
             <div style={{ padding: "10px", backgroundColor: "white" }}>
               <form onSubmit={handleMessageSubmit} className="">
