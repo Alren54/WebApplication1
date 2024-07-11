@@ -7,6 +7,12 @@ export default function TeachBot() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    if (conversations.length === 0) {
+      handleNewConversation();
+    }
+  }, []);
+
   const handleMessageSubmit = async (e) => {
     e.preventDefault();
     if (message.trim() !== '' && activeConversation !== null) {
