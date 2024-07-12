@@ -33,6 +33,25 @@ namespace WebApplication1.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+
+        [HttpPost("GenerateSummary")]
+        public async Task<IActionResult> GenerateSummary([FromBody] PromptRequest request)
+        {
+            if (request == null || string.IsNullOrEmpty(request.Prompt))
+            {
+                return BadRequest("Prompt is required.");
+            }
+
+            try
+            {
+                var result = await _openAIService.GenerateSummaryAsync(request.Prompt);
+                return Ok(new { summary = result });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
     }
 
     public class PromptRequest
