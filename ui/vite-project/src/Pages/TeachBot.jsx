@@ -7,6 +7,30 @@ export default function TeachBot() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const getTitle = async (messages) => {
+    const prompt = messages.map(msg => msg.text).join(' ');
+    try {
+      const res = await fetch('http://localhost:5221/api/OpenAI/GenerateText', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ prompt: `Generate a max 3-4 word title for the following conversation: ${prompt}` })
+      });
+
+      if (!res.ok) {
+        const errorText = await res.text();
+        throw new Error(errorText || 'Something went wrong');
+      }
+
+      const data = await res.json();
+      return data.response;
+    } catch (error) {
+      console.error('Error generating title:', error);
+      return 'Title not available';
+    }
+  };
+
   useEffect(() => {
     if (conversations.length === 0) {
       handleNewConversation();
@@ -29,7 +53,7 @@ export default function TeachBot() {
       setConversations(updatedConversations);
       setMessage('');
 
-      // API'ye mesajı gönder
+      // Send message to API
       await sendToAPI(message, activeConversation);
     }
   };
@@ -49,7 +73,7 @@ export default function TeachBot() {
 
       if (!res.ok) {
         const errorText = await res.text();
-        throw new Error(errorText || 'Bir şeyler yanlış gitti');
+        throw new Error(errorText || 'Something went wrong');
       }
 
       const data = await res.json();
@@ -57,21 +81,26 @@ export default function TeachBot() {
         if (index === convIndex) {
           return {
             ...conv,
-            messages: [...conv.messages,{text:message,sender:'main'}, { text: data.response, sender: 'bot' }]
+            messages: [...conv.messages, { text: inputMessage, sender: 'main' }, { text: data.response, sender: 'bot' }]
           };
         }
         return conv;
       });
+
+      // Generate title for the conversation
+      const title = await getTitle(updatedConversations[convIndex].messages);
+      updatedConversations[convIndex].title = title;
+
       setConversations(updatedConversations);
     } catch (error) {
-      setError('Veri alınırken hata oluştu: ' + error.message);
+      setError('Error fetching data: ' + error.message);
     } finally {
       setLoading(false);
     }
   };
 
   const handleNewConversation = () => {
-    const newConversation = { id: conversations.length, messages: [] };
+    const newConversation = { id: conversations.length, messages: [], title: 'New Conversation' };
     setConversations([...conversations, newConversation]);
     setActiveConversation(conversations.length);
   };
@@ -108,7 +137,7 @@ export default function TeachBot() {
     <div style={{ top: "70px" }} className="container-fluid">
       <div className="row">
         <div className="col-md-3" style={{ backgroundColor: "#ABE0F7", position: "fixed", height: "calc(95vh - 70px)", overflowY: "scroll" }}>
-          <h3 style={{ textAlign: "center", backgroundColor: "White", borderRadius: '15px', marginTop: "10px" }}>Finansal Okur-Yazarlık Danışmanı </h3>
+          <h3 style={{ textAlign: "center", backgroundColor: "White", borderRadius: '15px', marginTop: "10px" }}>Finansal Okur-Yazarlık Danışmanı</h3>
           <hr />
           <button className="btn btn-primary" onClick={handleNewConversation} style={{ backgroundColor: "#000581", color: "white" }}>Yeni Konuşma</button>
           <div>
@@ -126,7 +155,7 @@ export default function TeachBot() {
                   position: 'relative'
                 }}
               >
-                <span style={{ width: "80%" }}>Konuşma {conv.id + 1} </span>
+                <span style={{ width: "80%" }}>{conv.title || `Konuşma ${conv.id + 1}`}</span>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
