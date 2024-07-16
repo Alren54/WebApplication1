@@ -103,7 +103,7 @@ export default function TeachBot() {
   };
 
   const handleNewConversation = () => {
-    const newConversation = { id: conversations.length, messages: [], title: 'New Conversation' };
+    const newConversation = { id: conversations.length, messages: [], title: '' };
     setConversations([...conversations, newConversation]);
     setActiveConversation(conversations.length);
     Logger.log(`A new chat opened. 'Yeni Konuşma ${conversations.length + 1}'`);
@@ -160,7 +160,7 @@ export default function TeachBot() {
                   position: 'relative'
                 }}
               >
-                <span style={{ width: "80%" }}>{conv.title || `Konuşma ${conv.id + 1}`}</span>
+                <span style={{ width: "80%" }}>{conv.title || `Yeni Konuşma`}</span>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -178,7 +178,7 @@ export default function TeachBot() {
 
         <div className="container" style={{ backgroundColor: "#E6F5FB", padding: "0 230px 0 270px" }}>
           <div className="col-md-9 offset-md-3" style={{ backgroundColor: "white", height: "calc(95vh - 70px)", borderLeft: "2px solid #C6EEFF", borderRight: "2px solid #C6EEFF", display: "flex", flexDirection: "column" }}>
-            <h3 style={{ textAlign: "center", backgroundColor: "white", borderRadius: '15px', marginTop: "0px" }}>TeachBot - Konuşma {activeConversation !== null ? activeConversation + 1 : 'Yok'}</h3>
+            <h3 style={{ textAlign: "center", backgroundColor: "white", borderRadius: '15px', marginTop: "0px" }}>TeachBot </h3>
             <hr />
             <div style={{ flex: 1, overflowY: "auto" }}>
               {activeConversation !== null && conversations[activeConversation] && (
