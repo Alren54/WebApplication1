@@ -1,6 +1,7 @@
+import Logger from '../Utils/Logger';
 
 export default function SSS(){
-
+     Logger.log('SSS is connected.');
     return(
       <>
         <div className="container ">

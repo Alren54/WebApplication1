@@ -9,7 +9,7 @@ namespace WebApplication1.Controllers
     public class OpenAIController : ControllerBase
     {
         private readonly OpenAIService _openAIService;
-
+        private static readonly List<string> logs = new List<string>();
         public OpenAIController(OpenAIService openAIService)
         {
             _openAIService = openAIService;
@@ -51,6 +51,18 @@ namespace WebApplication1.Controllers
             {
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
+        }
+        [HttpGet("logs")]
+        public IActionResult GetLogs()
+        {
+            return Ok(logs);
+        }
+
+        [HttpPost("log")]
+        public IActionResult AddLog([FromBody] string logMessage)
+        {
+            logs.Add(logMessage);
+            return Ok();
         }
     }
 

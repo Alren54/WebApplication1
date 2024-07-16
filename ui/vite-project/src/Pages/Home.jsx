@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Logger from '../Utils/Logger';
 
 export default function Home() {
+  Logger.log('Home component initialized');
+
   const [data, setData] = useState([]);
 
   useEffect(() => {

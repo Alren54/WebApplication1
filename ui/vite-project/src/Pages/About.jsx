@@ -1,7 +1,9 @@
 
 import Person from "../Components/Person";
+import Logger from '../Utils/Logger';
 
 export default function About() {
+    Logger.log('About component initialized');
     return (
         <>
             <h1>Hakkımızda</h1>

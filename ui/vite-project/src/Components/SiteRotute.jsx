@@ -4,6 +4,7 @@ import TeachBot from '../Pages/TeachBot'
 import SSS from '../Pages/SSS'
 import About from '../Pages/About'
 import Suggestions from '../Pages/Suggestions'
+import Logs from '../Pages/Logs'
 
 export default function SiteRoutes(notes){
     return(
@@ -14,6 +15,8 @@ export default function SiteRoutes(notes){
       <Route path="/SSS" element={<SSS/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/suggestions" element={<Suggestions/>}/>
+      <Route path="/logs" element={<Logs/>}/>
+
       
       </Routes>
     )

@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
+import Logger from '../Utils/Logger'
 
 
-export default function Suggestions() {
+export default function Suggestions() {    
+    Logger.log('Suggestions component initialized');
+
     useEffect(() => {
         
         (function() {

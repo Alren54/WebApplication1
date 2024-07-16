@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
+import Logger from '../Utils/Logger'
 
 export default function TeachBot() {
+  Logger.log('TeachBot component initialized');
   const [message, setMessage] = useState('');
   const [conversations, setConversations] = useState([]);
   const [activeConversation, setActiveConversation] = useState(null);
@@ -51,6 +53,7 @@ export default function TeachBot() {
         return conv;
       });
       setConversations(updatedConversations);
+      Logger.log(`A new message "${message}" sent in the 'Yeni Konuşma ${activeConversation + 1}' chat.`);
       setMessage('');
 
       // Send message to API
@@ -103,6 +106,7 @@ export default function TeachBot() {
     const newConversation = { id: conversations.length, messages: [], title: 'New Conversation' };
     setConversations([...conversations, newConversation]);
     setActiveConversation(conversations.length);
+    Logger.log(`A new chat opened. 'Yeni Konuşma ${conversations.length + 1}'`);
   };
 
   const handleDeleteConversation = (id) => {
@@ -111,6 +115,7 @@ export default function TeachBot() {
       id: index
     }));
     setConversations(updatedConversations);
+    Logger.log(`A chat deleted. 'Yeni Konuşma ${id + 1}'`);
 
     if (updatedConversations.length === 0) {
       setActiveConversation(null);
