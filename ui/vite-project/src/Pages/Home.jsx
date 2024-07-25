@@ -8,7 +8,7 @@ export default function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5221/api/WebApplication1/GetNotes')
+    fetch('http://backend:5000/api/WebApplication1/GetNotes')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Error fetching data:', error));

@@ -12,7 +12,7 @@ export default function TeachBot() {
   const getTitle = async (messages) => {
     const prompt = messages.map(msg => msg.text).join(' ');
     try {
-      const res = await fetch('http://localhost:5221/api/OpenAI/GenerateText', {
+      const res = await fetch('http://backend:5000/api/OpenAI/GenerateText', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ export default function TeachBot() {
     setLoading(true);
 
     try {
-      const res = await fetch('http://localhost:5221/api/OpenAI/GenerateText', {
+      const res = await fetch('http://backend:5000/api/OpenAI/GenerateText', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

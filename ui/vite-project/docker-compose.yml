@@ -5,16 +5,16 @@ services:
       context: /mnt/c/Users/holly/OneDrive/Belgeler/GitHub/WebApplication1/api/WebApplication1
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"  # Backend için port eşleme
+      - "5000:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
 
   frontend:
     image: my-react-app
     build:
-      context: .
+      context: /mnt/c/Users/holly/OneDrive/Belgeler/GitHub/WebApplication1/ui/vite-project
       dockerfile: Dockerfile
     ports:
-      - "8081:80"  # Frontend için port eşleme
+      - "5173:80"
     environment:
       - NODE_ENV=development

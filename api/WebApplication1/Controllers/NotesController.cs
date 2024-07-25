@@ -13,6 +13,7 @@ namespace WebApplication1.Controllers
         [HttpGet("GetNotes")]
         public IActionResult GetNotes()
         {
+            
             return Ok(notes);
         }
     }
